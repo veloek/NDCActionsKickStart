@@ -1,0 +1,15 @@
+name: Say Hello
+description: Greet someone and record the time
+inputs:
+  who-to-greet:
+    description: Name of who to greet
+    required: true
+    default: World
+outputs:
+  time:
+    description: The time when the greeting happened
+runs:
+  using: Docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.who-to-greet }}
